@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadAllPosts, selectAllPosts, isLoading } from "./postPreviewsSlice";
+import './PostPreviews.css';
 
 const PostPreviews = () => {
     const dispatch = useDispatch();
@@ -18,26 +19,19 @@ const PostPreviews = () => {
 
     return (
         <div>
-            {postPreviews.map((post) => {
-                const { id, title, thumbnail } = post.data;
-
-                return (
-                    <div key={id} className="post-preview"> {/* Parent div for each post */}
-                        <div className="title-container"> {/* First child div for title */}
-                            <h3>{title}</h3>
-                        </div>
-                        <div className="image-container"> {/* Second child div for image */}
-                            {thumbnail && 
-                                (thumbnail !== 'self' && 
-                                thumbnail !== 'default' && 
-                                (thumbnail.endsWith('.jpg') || thumbnail.endsWith('.png')) 
-                                    ? <img src={thumbnail} alt={title} />
-                                    : <img src="path/to/default/image.png" alt="Default" />
-                            )}
-                        </div>
+            {postPreviews.length > 0 ? (
+                postPreviews.map((post) => (
+                    <div key={post.data.id} className="post-container">
+                        <h3>{post.data.title}</h3>
+                        {post.data.thumbnail && post.data.thumbnail !== 'self' && post.data.thumbnail !== 'default' && (
+                            <img src={post.data.thumbnail} alt={post.data.title} className="post-image" />
+                        )}
+                        <div className="bottom-div"></div>
                     </div>
-                );
-            })}
+                ))
+            ) : (
+                <div>No posts available.</div>
+            )}
         </div>
     );
 };

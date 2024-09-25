@@ -14,6 +14,19 @@ export const loadAllPosts = createAsyncThunk(
     }
 );
 
+export const searchPostPreviews = createAsyncThunk(
+    "postPreviews/searchPostPreviews",
+    async (query) => {
+        const response = await fetch(`https://www.reddit.com/search.json?q=${encodeURIComponent(query)}`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch search results");
+        }
+        const json = await response.json();
+        return json.data.children;
+    }
+);
+
+
 
 export const postPreviewsSlice = createSlice({
     name: "postPreviews",
@@ -38,7 +51,22 @@ export const postPreviewsSlice = createSlice({
                 state.isLoadingPostPreviews = false; // Reset loading state
                 state.hasError = true; // Set error state
                 state.errorMessage = action.error.message; // Store error message
+            })
+            .addCase(searchPostPreviews.pending, (state) => {
+                state.isLoadingPostPreviews = true;
+                state.hasError = false;
+                state.errorMessage = null;
+            })
+            .addCase(searchPostPreviews.fulfilled, (state, action) => {
+                state.isLoadingPostPreviews = false;
+                state.posts = action.payload;
+            })
+            .addCase(searchPostPreviews.rejected, (state, action) => {
+                state.isLoadingPostPreviews = false;
+                state.hasError = true;
+                state.errorMessage = action.error.message;
             });
+            
     }
 });
 

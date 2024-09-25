@@ -1,0 +1,43 @@
+.input-field-container {
+    display: flex; 
+    align-items: center; 
+    margin-right: 20px;
+    width: 100%;
+}
+
+
+
+.search-input {
+    width: 100%; 
+    padding: 10px;
+    border: 2px solid transparent; 
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #3a3f47; /* Dark background */
+    color: white; /* White text color */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.search-input:focus {
+    border-color: #007BFF; /* Change border color on focus */
+}
+
+.search-input:focus {
+    outline: none; 
+    border-color: #21a1f1; 
+    background-color: #2b2e36; 
+}
+
+.search-button {
+    background: transparent; 
+    border: none; 
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 2rem;
+    transition: transform 0.2s ease; /* Hover effect */
+}
+
+.search-button:hover .search-icon {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}

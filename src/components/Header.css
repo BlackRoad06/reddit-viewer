@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
- 
+
     opacity: 0; /* Start hidden */
     animation: fadeIn 0.5s forwards; /* Apply the animation */
     animation-delay: 1s; /* Delay before the animation starts */
@@ -27,6 +27,7 @@
 
   .heading-and-logo{
     display: flex; 
+    flex-direction: row;
     align-items: center; 
     padding: 0px 10px 0px 10px;
   }
@@ -43,6 +44,12 @@
     font-family: 'Berkshire Swash', cursive; /* For Dancing Script */
     font-size: 2rem; /* Adjust font size as needed */
   }
+
+ 
+.inputField {
+  margin-left: auto; /* Ensures it takes up space and moves to the center */
+  margin-right: auto;
+}
   
   .App-logo {
     height: 50px; /* Set logo height */
