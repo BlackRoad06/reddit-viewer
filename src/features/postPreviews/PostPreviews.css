@@ -25,3 +25,27 @@
     margin-bottom: 10px; 
 }
 
+.bottom-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #d1d1d1; /* Light gray for overall text */
+}
+
+.author-label {
+    font-weight: bold;
+    color: #f0f0f0; /* Lighter color for the "Posted by" label */
+    margin-right: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+.icon-placeholder {
+    font-size: 16px;
+    color: #f39c12; /* Bright gold for the icon to pop */
+    margin-left: 10px;
+}

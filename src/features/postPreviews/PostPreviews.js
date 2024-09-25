@@ -17,6 +17,11 @@ const PostPreviews = () => {
         return <div>Loading posts...</div>;
     }
 
+    const formatDate = (timestamp) => {
+        return new Date(timestamp * 1000).toLocaleString(); // Converts to a readable date format
+    };
+    
+
     return (
         <div>
             {postPreviews.length > 0 ? (
@@ -26,7 +31,11 @@ const PostPreviews = () => {
                         {post.data.thumbnail && post.data.thumbnail !== 'self' && post.data.thumbnail !== 'default' && (
                             <img src={post.data.thumbnail} alt={post.data.title} className="post-image" />
                         )}
-                        <div className="bottom-div"></div>
+                       <div className="bottom-div">
+                        <p><span className="author-label">Posted by: </span><span>{post.data.author}</span></p>
+                        <p><span>{formatDate(post.data.created_utc)}</span></p>
+                        <span className="icon-placeholder">🌟</span>
+                        </div>
                     </div>
                 ))
             ) : (
