@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+.App-header {
+    background-color: wheat;
+    color: black;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+ 
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.5s forwards; /* Apply the animation */
+    animation-delay: 1s; /* Delay before the animation starts */
+  }
+  @keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start completely transparent */
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+  .heading-and-logo{
+    display: flex; 
+    align-items: center; 
+    padding: 0px 10px 0px 10px;
+  }
+
+  h1{
+    color: #001F3F;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .viewer {
+    color: black;
+    font-style: italic;
+    font-family: 'Berkshire Swash', cursive; /* For Dancing Script */
+    font-size: 2rem; /* Adjust font size as needed */
+  }
+  
+  .App-logo {
+    height: 50px; /* Set logo height */
+    margin-right: 10px; /* Space between logo and title */
+  }
