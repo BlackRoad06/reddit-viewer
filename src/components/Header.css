@@ -55,3 +55,18 @@
     height: 50px; /* Set logo height */
     margin-right: 10px; /* Space between logo and title */
   }
+
+/*Media Queries*/
+
+
+
+    @media only screen and (max-width: 600px) {
+      .App-header {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+      
+    
+
+  
