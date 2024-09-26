@@ -25,7 +25,7 @@ const Comments = ({ postId }) => {
 
     return (
         <div>
-            <h4 className="comments-heading">Comments</h4>
+            <h5 className="comments-heading">Comments</h5>
             {comments.length > 0 ? (
                 <ul>
                     {comments.map(comment => (
@@ -36,7 +36,7 @@ const Comments = ({ postId }) => {
                     ))}
                 </ul>
             ) : (
-                <div>No comments available.</div>
+                <div><h5>No comments available.</h5></div>
             )}
         </div>
     );

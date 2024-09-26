@@ -1,0 +1,47 @@
+/* Comments.css */
+.comments-heading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.comment-item:hover {
+    background-color: #f1f1f1;
+}
+
+.comment-body {
+    font-size: 0.875rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .comment-body {
+        font-size: 0.8rem;
+    }
+
+    .comment-author {
+        font-size: 0.7rem;
+    }
+}
